@@ -34,8 +34,8 @@ const WriteSetting = (props) => {
         dispatch(buildDate(today))
         article = { ...article, id, date: today }
         console.log(article,"article")
-        let {majTitle,minTitle,content}=article
-        if (!majTitle || !minTitle || !content) {
+        let {majTitle,minTitle,content,image}=article
+        if (!majTitle || !minTitle || !content || !image) {
             console.log("主標副標內文有一個沒值")
             alert("主標副標內文有一個沒值")
             return

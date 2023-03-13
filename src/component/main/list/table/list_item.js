@@ -4,15 +4,19 @@ import TableTitle from "./tableTitle"
 import TableTags from "./tableTags"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { removeList } from "../../../../store/listSlice"
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
+import Image from 'react-bootstrap/Image';
 
+const imgStyles={
+    maxWidth:"150px"
+}
 const ListItem = (props) => {
     let { item } = props
     let dispatch=useDispatch()
     console.log(item,"item")
-    let { majTitle, minTitle, date, id, category, like, view, share, tags } = item
+    let { majTitle, minTitle, date, id, like, view, share, tags,image } = item
     let TITLE = {
-        majTitle, minTitle, date
+        majTitle, minTitle, date,id
     }
     const previewPagesHandler=()=>{
         dispatch(removeList(id))
@@ -31,7 +35,9 @@ const ListItem = (props) => {
                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                 </div>
             </th>
-            <td>image</td>
+            <td>
+            <Image src={image} alt="Random image" style={imgStyles} />
+            </td>
             <td className="tableTitle pe-4"><TableTitle item={TITLE} /></td>
             <td >{tags && <TableTags status={"tags"} item={tags}></TableTags>}</td>
             {/* <td >{category && <TableTags status={"category"} item={category}></TableTags>}</td> */}

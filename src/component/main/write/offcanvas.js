@@ -8,6 +8,7 @@ import {
   majTitleHandler,
   minTitleHandler,
   removeTag,
+  imageHandler
 } from "../../../store/articleSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "react-bootstrap/Image";
@@ -24,6 +25,11 @@ const Offcanvas = () => {
     let value = tagInputRef.current.value.trim();
     if (!value) {
       return;
+    }
+    const isRepeat = tagsArray.find((item) => item.name === value);
+    if (isRepeat) {
+        console.log("重複的標籤名稱")
+        return
     }
     let tag = {
       id: Math.random(),
@@ -50,6 +56,8 @@ const Offcanvas = () => {
     if (!event.target.files[0]) return;
     const reader = new FileReader();
     reader.onload = () => {
+        dispatch(imageHandler(reader.result))
+        
       setFileSrc(reader.result);
       // console.log(reader.result, "e.target.result")
       //   setPreviewImage(e.target.result);
@@ -59,6 +67,7 @@ const Offcanvas = () => {
   };
   const resetFileChange=()=>{
     // console.log("qqqwwqw")
+    dispatch(imageHandler(null))
     setFileSrc(null)
   }
   return (
@@ -165,6 +174,7 @@ const Offcanvas = () => {
             <div className="input-group mb-3">
               <input
                 ref={tagInputRef}
+                // onKeyPress={handleInputChange}
                 type="text"
                 className="form-control"
                 placeholder="請輸入新標籤"

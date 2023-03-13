@@ -1,12 +1,17 @@
 import React, { Fragment } from "react"
-import { Route, NavLink } from "react-router-dom";
+import { Route, NavLink, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TableTitle = (props) => {
-    let { date, majTitle, minTitle } = props.item
+    let { id,date, majTitle, minTitle } = props.item
+    const goPath = useHistory();//設常數接收useHistory()回傳的物件
+    const previewArticle_Detail=()=>{
+        console.log(id,"idddd")
+        goPath.push(`/editArticle/${id}`)
+    }
     return (
         <Fragment>
-            <div className="text-dark mainTitle" >{majTitle}</div>
+            <div className="text-dark mainTitle cursor-pointer" onClick={previewArticle_Detail} >{majTitle}</div>
             <div className="text-dark minTitle">{minTitle}</div>
             <div className="dropdown table-group  d-flex justify-content-end">
                 <div className="text-secondary date  dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> {date} </div>

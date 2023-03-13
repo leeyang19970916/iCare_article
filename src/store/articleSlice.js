@@ -14,7 +14,7 @@ let initArticle = {
     date: "",
     category: [
         {id: 0.691816669949, name: '熱門文章'} ,{id: 0.69189995, name: '最新消息'}],
-    image: "",
+    image: null,
     like: 15,
     share: 52,
     view: 86
@@ -34,10 +34,7 @@ const articleSlice = createSlice({
         },
         removeTag(state, action) {
             let id = action.payload
-            let newArray = state.tags.filter(item => item.id !== id)
-            state.tags = [...newArray]
-            console.log(action)
-            return state.tags
+            state.tags = state.tags.filter(item => item.id !== id)
         },
         majTitleHandler(state, action) {
             let value = action.payload
@@ -66,9 +63,13 @@ const articleSlice = createSlice({
         resetState(state, action) {
             state = JSON.parse(JSON.stringify(initArticle))
             return state
+        },
+        imageHandler(state,action){
+            let img=action.payload
+            state.image=img
         }
     }
 })
-export const { buildDate,buildID, resetState, changeImage, addTag, removeTag, majTitleHandler, minTitleHandler, contentHandler } = articleSlice.actions
+export const {imageHandler, buildDate,buildID, resetState, changeImage, addTag, removeTag, majTitleHandler, minTitleHandler, contentHandler } = articleSlice.actions
 
 export default articleSlice.reducer

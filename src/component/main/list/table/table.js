@@ -64,7 +64,7 @@ const Table = () => {
                                 <input onChange={() => setIsChecked(!isChecked)} className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                             </div>
                         </th>
-                        <th scope="col" style={{ width: "5%" }}>
+                        <th scope="col" style={{width: "2%" }}>
                             預覽圖
                         </th>
                         <th scope="col" style={{ width: "20%" }} className="tableTitle">
