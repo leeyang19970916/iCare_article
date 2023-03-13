@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/iCare_article/static/css/main.37a8c2dc.css",
+    "main.js": "/iCare_article/static/js/main.63d33888.js",
+    "index.html": "/iCare_article/index.html",
+    "main.37a8c2dc.css.map": "/iCare_article/static/css/main.37a8c2dc.css.map",
+    "main.63d33888.js.map": "/iCare_article/static/js/main.63d33888.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37a8c2dc.css",
+    "static/js/main.63d33888.js"
+  ]
+}
