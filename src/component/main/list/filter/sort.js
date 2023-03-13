@@ -14,6 +14,7 @@ const Sort = () => {
     const [tagsArray, setTagsArray] = useState([]);
     const removeTagSortHandler = (item) => {
         let { id } = item
+        console.log(id,"iddd")
         if (!id) {
             return
         }
@@ -59,7 +60,7 @@ const Sort = () => {
             </section>
 
             <section className="px-2">
-                <div className="d-flex align-items-center mb-3">
+                {/* <div className="d-flex align-items-center mb-3">
                     <div className="fw-bolder text-primary" style={{ width: "20%" }}>主分類</div>
                     <select className="form-select" aria-label="Default select example">
                         <option >熱門文章</option>
@@ -76,7 +77,7 @@ const Sort = () => {
                         <option >Two</option>
                         <option >Three</option>
                     </select>
-                </div>
+                </div> */}
                 <div className="d-flex align-items-center mb-3">
                     <div className="fw-bolder text-primary" style={{ width: "20%" }}>發佈時間</div>
                     <div className="input-group">

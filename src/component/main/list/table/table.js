@@ -23,7 +23,7 @@ const filterTagsHandler = (data, tagArray) => {
         })
         // e.tags=""
     });
-    console.log(data,"data",tagArray,"tagArray")
+    // console.log(data,"data",tagArray,"tagArray")
     // data.filter(item => {
     //     item.tags.filter(item1 => {
     //         let aaa = tagArray.some(item2 => item1.id === item2.id && item1.name === item2.name)
@@ -73,9 +73,9 @@ const Table = () => {
                         <th scope="col" style={{ width: "10%" }}>
                             標籤
                         </th>
-                        <th scope="col" style={{ width: "10%" }}>
+                        {/* <th scope="col" style={{ width: "10%" }}>
                             分類
-                        </th>
+                        </th> */}
                         <th scope="col" style={{ width: "1%" }}>
                             <FontAwesomeIcon icon="fa-regular fa-eye" />
                         </th>

@@ -34,7 +34,7 @@ const ListItem = (props) => {
             <td>image</td>
             <td className="tableTitle pe-4"><TableTitle item={TITLE} /></td>
             <td >{tags && <TableTags status={"tags"} item={tags}></TableTags>}</td>
-            <td >{category && <TableTags status={"category"} item={category}></TableTags>}</td>
+            {/* <td >{category && <TableTags status={"category"} item={category}></TableTags>}</td> */}
             <td>{view}</td>
             <td>{like}</td>
             <td>{share}</td>

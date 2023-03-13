@@ -23,9 +23,10 @@ const sortSlice = createSlice({
 
         },
         removeTagHandler(state,action){
-            let id=action.payload
-            state.tags=state.tags.filter(item=>item.id!==id)
-            console.log("settitleHandler",JSON.parse(JSON.stringify(state)))
+            console.log("qqqqqqwww")
+            // let id=action.payload
+            // state.tags=state.tags.filter(item=>item.id!==id)
+            // console.log("settitleHandler",JSON.parse(JSON.stringify(state)))
 
         }
     }
