@@ -1,0 +1,28 @@
+input[type="file"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+label {
+    font-weight: bold;
+    color: #6990f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #6990f2;
+    padding: 3rem;
+    flex-direction: column;
+}
+
+label>i {
+    margin-bottom: 5px;
+}
+
+#box img {
+    flex-direction: row;
+}
