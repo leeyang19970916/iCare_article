@@ -29,6 +29,7 @@ const WriteHeader = (props) => {
     let article = useSelector(state => state.article)
     if (true) {
         const saveArticleHandler = () => {
+            // props.onSave()
             // 主標副標 內容至少都要有內容不然推額
             let { id, today } = Today()
     
