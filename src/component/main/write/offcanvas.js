@@ -20,7 +20,10 @@ const Offcanvas = () => {
   const dispatch = useDispatch();
   const tagsArray = useSelector((state) => state.article.tags);
   let tagInputRef = useRef();
-  const [fileSrc, setFileSrc] = useState(null);
+  // const [fileSrc, setFileSrc] = useState(null);
+  let fileSrc=useSelector(state=>state.article.image) || null
+  let majTitle=useSelector(state=>state.article.majTitle) || ""
+  let minTitle=useSelector(state=>state.article.minTitle) || ""
   const addTagsHandler = () => {
     let value = tagInputRef.current.value.trim();
     if (!value) {
@@ -58,7 +61,7 @@ const Offcanvas = () => {
     reader.onload = () => {
         dispatch(imageHandler(reader.result))
         
-      setFileSrc(reader.result);
+      // setFileSrc(reader.result);
       // console.log(reader.result, "e.target.result")
       //   setPreviewImage(e.target.result);
     };
@@ -68,7 +71,7 @@ const Offcanvas = () => {
   const resetFileChange=()=>{
     // console.log("qqqwwqw")
     dispatch(imageHandler(null))
-    setFileSrc(null)
+    // setFileSrc(null)
   }
   return (
     <Fragment>
@@ -133,6 +136,7 @@ const Offcanvas = () => {
               <div className="input-group mb-3 ">
                 <input
                   type="text"
+                  value={majTitle}
                   onChange={majTitleInputHandler}
                   className="form-control"
                   placeholder="主標題"
@@ -142,6 +146,7 @@ const Offcanvas = () => {
               <div className="input-group mb-3">
                 <input
                   type="text"
+                  value={minTitle}
                   onChange={minTitleInputHandler}
                   className="form-control"
                   placeholder="副標題"

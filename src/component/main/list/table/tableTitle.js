@@ -1,12 +1,20 @@
 import React, { Fragment } from "react"
 import { Route, NavLink, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useDispatch, useSelector } from "react-redux";
+import {copyState} from "../../../../store/articleSlice"
 
 const TableTitle = (props) => {
     let { id,date, majTitle, minTitle } = props.item
     const goPath = useHistory();//設常數接收useHistory()回傳的物件
+    let dispatch = useDispatch()
+    let listStore=useSelector(state=>state.list) || []
+
     const previewArticle_Detail=()=>{
-        console.log(id,"idddd")
+        // console.log(id,"idddd")
+        let article=listStore.find(item=>item.id===id)
+        dispatch(copyState(article))
+        // console.log(article,"article")
         goPath.push(`/editArticle/${id}`)
     }
     return (

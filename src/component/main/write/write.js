@@ -6,6 +6,7 @@ import WriteSetting from "./writeSetting";
 import EditArea from "./EditArea";
 import { useParams, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Offcanvas from "./offcanvas";
 const Write = () => {
   let headerHeightRef = useRef();
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -19,9 +20,10 @@ const Write = () => {
   };
   // useParams
 
-  // let { id } = useParams();
+  let { id } = useParams();
   // console.log(id,"idddd")
-  // let listArr=useSelector((state)=>state.list)
+  let article=useSelector((state)=>state.article)
+  console.log(article,"articlearticlearticle")
   // let article = null;
   // if (id) {
   //   article = listArr.find((item) => item.id === id);
@@ -56,6 +58,7 @@ const Write = () => {
         {/* 標籤 分類 標題  圖片*/}
         {/* 內容 */}
         <EditArea ></EditArea>
+        <Offcanvas ></Offcanvas>
       </div>
     </Fragment>
   );
