@@ -15,6 +15,7 @@ const ListItem = (props) => {
     let dispatch=useDispatch()
     console.log(item,"item")
     let { majTitle, minTitle, date, id, like, view, share, tags,image } = item
+    console.log(image,"imageee")
     let TITLE = {
         majTitle, minTitle, date,id
     }

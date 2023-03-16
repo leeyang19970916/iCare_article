@@ -1,0 +1,20 @@
+.offcanvas-component {
+  .active {
+    // background-color: #af3535;
+    border: 2px solid rgb(107, 106, 106);
+    background-color: #687988;
+    color: whitesmoke !important;
+  }
+}
+.offcanvas-header {
+  .btn-close {
+    filter: invert(100%) grayscale(100%) brightness(200%);
+    // color: red; /* 更改文字顏色 */
+    // background-color: transparent; /* 移除背景色 */
+    // background-image: none; /* 移除背景圖片 */
+    // border: none; /* 移除邊框 */
+    // padding: 0; /* 移除內距 */
+    // font-size: 1.5rem; /* 設定字型大小 */
+    // line-height: 1; /* 設定行高 */
+  }
+}

@@ -3,6 +3,7 @@ import SortTagsBtn from "../list/filter/sort_tagsBtn";
 import "../../../scss/list/_sort.scss";
 import { useSelector, useDispatch } from "react-redux";
 import "../../../scss/list/_image.scss";
+import "../../../scss/write/_offcanvas.scss"
 import {
   addTag,
   majTitleHandler,
@@ -79,7 +80,7 @@ const Offcanvas = () => {
         className="offcanvas offcanvas-start h-100 bg-dark text-white"
         data-bs-scroll="true"
         data-bs-backdrop="false"
-        tabIndex="-1"
+        // tabIndex="-1"
         id="offcanvasBasicSetting"
         aria-labelledby="offcanvasScrollingLabel"
       >
@@ -88,7 +89,7 @@ const Offcanvas = () => {
             type="button"
             className="btn-close  text-white"
             data-bs-dismiss="offcanvas"
-            aria-label="Close"
+            // aria-label="Close"
           ></button>
         </div>
         <div className="offcanvas-body">
